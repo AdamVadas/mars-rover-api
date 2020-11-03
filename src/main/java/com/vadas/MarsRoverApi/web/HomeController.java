@@ -1,4 +1,4 @@
-package com.vadas.MarsRoverApi;
+package com.vadas.MarsRoverApi.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,7 +11,6 @@ public class HomeController {
 
     @RequestMapping(path = "/r", method = RequestMethod.GET)
     public String getHomeView (ModelMap model) {
-        model.put("name", "Trevor Page");
         return "index";
     }
 }
