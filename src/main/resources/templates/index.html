@@ -6,13 +6,74 @@
     <body>
         <h2>Welcome to the Mars Rover API Web App</h2>
 
-        <form method="post" action="" id="frmRoverType">
-            <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
+        <form method="get" action="" id="frmRoverType">
+            <input type="hidden" th:field="${homeDTO.marsApiRoverData}"/>
             <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em">
                 <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiosity</button>
                 <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
                 <button type="button" class="btn btn-secondary" id="marsApiSpirit">Spirit</button>
             </div>
+
+            <div class="form-check">
+             <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraFhaz}">
+                <label class="form-check-label" for="cameraFhaz1">
+                    Front Hazard Avoidance Camera
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraRhaz}">
+                <label class="form-check-label" for="cameraRhaz1">
+                    Rear Hazard Avoidance Camera
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraMast}">
+                <label class="form-check-label" for="cameraMast1">
+                    Mast Camera
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraChemcam}">
+                <label class="form-check-label" for="cameraChemcam1">
+                    Chemistry and Camera Complex
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraMahli}">
+                <label class="form-check-label" for="cameraMahli1">
+                    Mars Hand Lens Imager
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraMardi}">
+                <label class="form-check-label" for="cameraMardi1">
+                    Mars Descent Manager
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraNavcam}">
+                <label class="form-check-label" for="cameraNavcam1">
+                    Navigation Camera
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraPancam}">
+                <label class="form-check-label" for="cameraPancam1">
+                    Panoramic Camera
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="${homeDTO.cameraMinites}">
+                <label class="form-check-label" for="cameraMinites1">
+                    Miniature Thermal Emission Spectrometer
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label-lg">Mars Sol: </label>
+                <input type="number" class="form-control form-control-lg" th:field="${homeDTO.marsSol}" min="0"/>
+            </div>
+            <button type="submit" class="btn-primary btn-lg">Submit</button>
         </form>
 
         <div class="container" >
