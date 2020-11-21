@@ -73,7 +73,16 @@
                 <label class="col-form-label-lg">Mars Sol: </label>
                 <input type="number" class="form-control form-control-lg" th:field="${homeDTO.marsSol}" min="0"/>
             </div>
-            <button type="submit" class="btn-primary btn-lg">Submit</button>
+
+            <div class="row">
+                <div class="col-3 col-md-2">
+                    <button type="submit" class="btn-primary btn-lg">Submit</button>
+                </div>
+                <div class="col-9 col-md-10" style="margin-top: 0.7em">
+                    <label for="rememberPreferences1">Remember Preferences</label>
+                    <input type="checkbox" th:field="${homeDTO.rememberPreferences}"/>
+                </div>
+            </div>
         </form>
 
         <div class="container" >
