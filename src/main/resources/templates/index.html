@@ -6,8 +6,10 @@
     <body>
         <h2>Welcome to the Mars Rover API Web App</h2>
 
-        <form method="get" action="" id="frmRoverType">
+        <form method="post" action="" id="frmRoverType">
             <input type="hidden" th:field="${homeDTO.marsApiRoverData}"/>
+            <input type="hidden" th:field="${homeDTO.userId}"/>
+            <input type="hidden" id="createUser" name="createUser" value="false"/>
             <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em">
                 <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiosity</button>
                 <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>

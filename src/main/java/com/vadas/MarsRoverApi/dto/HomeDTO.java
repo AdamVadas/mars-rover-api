@@ -1,7 +1,16 @@
 package com.vadas.MarsRoverApi.dto;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "mars_api_preferences")
 public class HomeDTO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
+
+    @Column(length = 20)
     private String marsApiRoverData;
     private Integer marsSol;
     private Boolean cameraFhaz;
@@ -109,5 +118,32 @@ public class HomeDTO {
 
     public void setRememberPreferences(Boolean rememberPreferences) {
         this.rememberPreferences = rememberPreferences;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "HomeDTO{" +
+                "userId=" + userId +
+                ", marsApiRoverData='" + marsApiRoverData + '\'' +
+                ", marsSol=" + marsSol +
+                ", cameraFhaz=" + cameraFhaz +
+                ", cameraRhaz=" + cameraRhaz +
+                ", cameraMast=" + cameraMast +
+                ", cameraChemcam=" + cameraChemcam +
+                ", cameraMahli=" + cameraMahli +
+                ", cameraMardi=" + cameraMardi +
+                ", cameraNavcam=" + cameraNavcam +
+                ", cameraPancam=" + cameraPancam +
+                ", cameraMinites=" + cameraMinites +
+                ", rememberPreferences=" + rememberPreferences +
+                '}';
     }
 }

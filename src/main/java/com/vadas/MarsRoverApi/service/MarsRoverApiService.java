@@ -1,8 +1,10 @@
 package com.vadas.MarsRoverApi.service;
 
 import com.vadas.MarsRoverApi.dto.HomeDTO;
+import com.vadas.MarsRoverApi.repository.PreferencesRepository;
 import com.vadas.MarsRoverApi.response.MarsPhoto;
 import com.vadas.MarsRoverApi.response.MarsRoverApiResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +18,9 @@ public class MarsRoverApiService {
     private static final String API_KEY = "WMVtDK3FBBFRLVNnzHGTjdbAwC799x2pBXPz3jqM";
 
     private Map<String, List<String>> validCameras = new HashMap<>();
+
+    @Autowired
+    private PreferencesRepository preferencesRepository;
 
     public MarsRoverApiService() {
         validCameras.put("Opportunity", Arrays.asList("FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"));
@@ -61,5 +66,13 @@ public class MarsRoverApiService {
 
     public Map<String, List<String>> getValidCameras() {
         return validCameras;
+    }
+
+    public HomeDTO save(HomeDTO homeDTO) {
+        return preferencesRepository.save(homeDTO);
+    }
+
+    public HomeDTO findbyUserId(Long userId) {
+        return preferencesRepository.findByUserId(userId);
     }
 }
